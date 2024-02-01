@@ -2,17 +2,21 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 pub fn animal_habitat(animal: &str) -> &'static str {
+
+    // Rust is statically typed so the type of 
+    // `identifier` must be known at compile time
+    // This means no ambiguity in the type that 
+    // the expression will evaluate to is allowed
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2   // was 2.0
     } else if animal == "snake" {
         3
     } else {
-        "Unknown"
+        4   // was "Unknown"
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW
