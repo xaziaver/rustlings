@@ -6,18 +6,20 @@
 // Execute `rustlings hint move_semantics3` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
 
 #[test]
 fn main() {
     let vec0 = vec![22, 44, 66];
 
+    // ownership passed and changed to mutable
     let mut vec1 = fill_vec(vec0);
 
     assert_eq!(vec1, vec![22, 44, 66, 88]);
 }
 
-fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+// here we can change the argument to mutable since
+// ownership of the argument is passed to the function
+fn fill_vec(mut vec: Vec<i32>) -> Vec<i32> {
     vec.push(88);
 
     vec
