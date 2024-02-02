@@ -9,7 +9,7 @@
 fn main() {
     // array with 100 elements with the value 0
     let a = [0; 100];
-    // aray with explicit identifier 
+    // aray with an explicit annotation 
     // 5 i32 elements, 1 to 5
     let a: [i32; 5] = [1, 2, 3, 4, 5];
 
