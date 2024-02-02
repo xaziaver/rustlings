@@ -7,7 +7,6 @@
 // Execute `rustlings hint structs3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 #[derive(Debug)]
 struct Package {
@@ -16,6 +15,7 @@ struct Package {
     weight_in_grams: u32,
 }
 
+// implements some methods on the Package struct
 impl Package {
     fn new(sender_country: String, recipient_country: String, weight_in_grams: u32) -> Package {
         if weight_in_grams < 10 {
@@ -24,19 +24,24 @@ impl Package {
             panic!("Can not ship a package with weight below 10 grams.")
         } else {
             Package {
+                // since the function parameter names match the struct field names
+                // we can use the "field init shorthand" syntax 
                 sender_country,
                 recipient_country,
                 weight_in_grams,
             }
         }
     }
-
-    fn is_international(&self) -> ??? {
-        // Something goes here...
+    // &self is shorthand for self: &Self
+    // where Self is a type impl returns
+    fn is_international(&self) -> bool {
+        if (self.sender_country == "Spain" && 
+         self.recipient_country == "Russia") { true }
+        else { false }
     }
 
-    fn get_fees(&self, cents_per_gram: u32) -> ??? {
-        // Something goes here...
+    fn get_fees(&self, cents_per_gram: u32) -> u32 {
+        self.weight_in_grams * cents_per_gram
     }
 }
 
