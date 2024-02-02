@@ -5,11 +5,12 @@
 // Execute `rustlings hint primitive_types5` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
 
 fn main() {
     let cat = ("Furry McFurson", 3.5);
-    let /* your pattern here */ = cat;
+    // name is initialized with first value in tuple
+    // age is initialized with second value in tuple
+    let (name, age) = cat;
 
     println!("{} is {} years old.", name, age);
 }
